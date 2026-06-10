@@ -1,6 +1,6 @@
 ---
 name: plan-projector
-description: For Plan Agent - 用户要求review plan/plan生成完毕/Metis或Momus批准通过后调用
+description: For Plan Agent - 用户要求review plan/plan生成完毕/Prometheus触发start-work的时候调用
 ---
 
 # plan-projector
@@ -11,8 +11,8 @@ plan-projector 制定了一系列规则，为更好的向用户展示plan的更�
 
 - 当用户明确要求你总结 plan
 - 当用户明确要求review plan
-- ((当你不是 Prometheus) OR (用户不要求 Metis 高精度 Review)) AND Plan生成后
-- Metis/Momus 高精度 Review 通过后
+- 当你是 Prometheus: 让用户 /start-work 之前调用 plan-projector
+- (Metis/Momus 高精度 Review 通过后)
 
 
 ## Instructions
